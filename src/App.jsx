@@ -16,7 +16,7 @@ function App() {
   const [count, setCount] = useState(0);
   let {showCart} = AppState();
   return (
-    <div className="">
+    <div className="bg-white">
       <Navbar />
       { showCart ? 
       <PopupCart />
