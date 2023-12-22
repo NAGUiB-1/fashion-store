@@ -4,13 +4,8 @@ import Row from "./Row";
 
 import axios from "axios";
 
-function Shoes() {
+function Jacket() {
   let [data, setData] = useState([]);
-
-  /*
-
-
-  */
 
   useEffect(() => {
     let fetchData = async (q) => {
@@ -35,14 +30,14 @@ function Shoes() {
       const data = await axios.request(options).then((res) => res.data);
       setData(data.products);
     };
-    fetchData("shoes");
+    fetchData("jacket");
   }, []);
 
   return (
     <>
-      <Row data={data} title="Shoes" />
+      <Row data={data} title="Jackets" />
     </>
   );
 }
 
-export default Shoes;
+export default Jacket;

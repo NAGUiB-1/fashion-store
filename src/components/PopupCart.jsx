@@ -9,11 +9,16 @@ let PopupCart = () => {
   let navigate = useNavigate();
   console.log(totalPrice);
   return (
-
     <div className="fixed top-[0] right-0 w-full md:w-[400px] z-[100] h-screen bg-[#eee]  anim-slide overflow-hidden ">
       <div className="flex flex-row h-[55px] w-full justify-between items-center p-1">
-        <div className='text-2xl font-bold border-2 border-red-600 border-solid rounded-[50%] w-[30px] h-[30px] flex justify-center items-center text-red-600' onClick={() => setShowCart(!showCart)}> x</div>
-        <div className='text-center'             > Shopping Cart</div>
+        <div
+          className="text-2xl font-bold border-2 border-red-600 border-solid rounded-[50%] w-[30px] h-[30px] flex justify-center items-center text-red-600"
+          onClick={() => setShowCart(!showCart)}
+        >
+          {" "}
+          x
+        </div>
+        <div className="text-center font-bold"> Shopping Cart</div>
         <div className="relative self-end">
           <AiOutlineShoppingCart
             size={30}
@@ -45,7 +50,7 @@ let PopupCart = () => {
               type="text"
               className="border-2 border-solid border-white text-center text-white w-full bg-black rounded-xl h-10 uppercase"
               placeholder="VOUCHER CODE"
-              maxlength="10" 
+              maxlength="10"
             />
           </form>
           <div className=" text-white w-full bg-red-600 rounded-xl flex items-center justify-center h-10 font-bold">
@@ -53,14 +58,17 @@ let PopupCart = () => {
             TOTAL : $ {totalPrice}
           </div>
         </div>
-        <button className="text-white w-full bg-green-500 rounded-xl flex items-center justify-center h-12 font-bold" 
-        onClick={()=>{navigate('/checkout'); setShowCart(!showCart)}}
+        <button
+          className="text-white w-full bg-green-500 rounded-xl flex items-center justify-center h-12 font-bold"
+          onClick={() => {
+            navigate("/checkout");
+            setShowCart(!showCart);
+          }}
         >
           Checkout
         </button>
       </div>
     </div>
-    
   );
 };
 export default PopupCart;

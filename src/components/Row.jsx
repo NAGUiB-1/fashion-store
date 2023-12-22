@@ -17,7 +17,7 @@ function Row({ data, title }) {
   //console.log(window.getComputedStyle(box.current, null).getPropertyValue('padding-left'))
 
   return (
-    <div className="bg-[white] py-6 ">
+    <div className="py-6 ">
       <h3 className="container mx-auto font-bold text-left px-2 text-4xl">
         {title}
       </h3>
@@ -51,11 +51,19 @@ function Row({ data, title }) {
                 {data?.map((i) => (
                   <div key={i.id} className="w-[250px] ">
                     <NewCard
-                      title={i?.name? i.name : i.title}
+                      title={i?.name ? i.name : i.title}
                       brand={i.brandName}
-                      price={i?.price?.current?.value ? i.price.current.value : i.price }
-                      oldPrice={i?.price?.previous?.value ? i.price.previous.value : i.oldPrice}
-                      thumb={`${i?.imageUrl ? i.imageUrl: i.thumb}`}
+                      price={
+                        i?.price?.current?.value
+                          ? i.price.current.value
+                          : i.price
+                      }
+                      oldPrice={
+                        i?.price?.previous?.value
+                          ? i.price.previous.value
+                          : i.oldPrice
+                      }
+                      thumb={`${i?.imageUrl ? i.imageUrl : i.thumb}`}
                       //discount={i.discountPercentage}
                       id={i.id}
                     />

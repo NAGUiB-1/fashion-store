@@ -11,27 +11,25 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Category from "./components/Category";
 import { AppState } from "./AppState";
-import PopupCart from './components/PopupCart'
+import PopupCart from "./components/PopupCart";
+import Footer from "./components/Footer";
 function App() {
   const [count, setCount] = useState(0);
-  let {showCart} = AppState();
+  let { showCart } = AppState();
   return (
-    <div className="bg-white">
+    <div className="">
       <Navbar />
-      { showCart ? 
-      <PopupCart />
-      :''
-      }
-    {/*<Category /> */}
+      {showCart ? <PopupCart /> : ""}
+      {/*<Category /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
         <Route path="products/:category" element={<Products />} />
         <Route path="product/:id" element={<Product />} />
-        
         <Route path="/search/:search" element={<Search />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

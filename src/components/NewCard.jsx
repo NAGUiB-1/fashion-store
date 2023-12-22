@@ -10,17 +10,16 @@ function NewCard({ oldPrice, price, brand, title, rating, thumb, id }) {
 
   let handleClick = () => {
     let arr = [];
-    arr.push(...lastViewed) 
-    lastViewed?.forEach((e,i)=>{
-      if(e.id == item.id) {
-        arr.splice(i,1)
+    arr.push(...lastViewed);
+    lastViewed?.forEach((e, i) => {
+      if (e.id == item.id) {
+        arr.splice(i, 1);
       }
-    })
+    });
     arr.unshift(item);
     setLastViewed([...arr]);
     console.log(arr);
   };
-  
 
   /*  
    if(cart.indexOf(item) == -1 )
@@ -29,7 +28,7 @@ function NewCard({ oldPrice, price, brand, title, rating, thumb, id }) {
 
   return (
     <div
-      className="inline-block w-full transition-all rounded-lg group bg-white "
+      className="inline-block w-full transition-all rounded-lg group bg-white p-2"
       onClick={handleClick}
     >
       <div className="rounded ">

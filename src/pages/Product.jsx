@@ -4,11 +4,12 @@ import Similar from "../components/Similar";
 import LastViewed from "../components/LastViewed";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../fetchData";
-import axios from 'axios'
+import axios from "axios";
+import Loader from "../components/Loader";
 const Product = () => {
   let { id } = useParams();
   const [data, setData] = useState([]);
-
+  let [load, setLoad] = useState(true);
   useEffect(() => {
     /*
     const getProduct = async () => {
@@ -28,6 +29,7 @@ const Product = () => {
     
     */
     let fetchData = async (id) => {
+      setLoad(true);
       const options = {
         method: "GET",
         url: "https://asos2.p.rapidapi.com/products/v3/detail",
@@ -46,11 +48,15 @@ const Product = () => {
       };
       const data = await axios.request(options).then((res) => res.data);
       setData(data);
+      setLoad(false);
     };
-    
+
     fetchData(id);
   }, [id]);
 
+  if (load) {
+    return <Loader />;
+  }
   return (
     <>
       <NewProductInfo data={data} />

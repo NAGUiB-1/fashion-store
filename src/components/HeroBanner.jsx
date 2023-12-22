@@ -2,7 +2,6 @@ import React from "react";
 import Hero1 from "../assets/hero1.jpg";
 import Hero2 from "../assets/hero2.jpg";
 
-import CategoryAds from "./CategoryAdd";
 const HeroBanner = () => {
   return (
     <div className="h-auto md:h-[400px] bg-[#eee] w-screen">
@@ -15,8 +14,7 @@ const HeroBanner = () => {
               Things go better <br /> with Fashion{" "}
             </div>
             <button className=" w-fit text-white bg-[#333] py-4 px-6 rounded font-mono font-bold uppercase  mx-auto md:mx-0">
-              
-              <a href='#featured'>Discover Now</a>
+              <a href="#featured">Discover Now</a>
             </button>
           </div>
         </div>

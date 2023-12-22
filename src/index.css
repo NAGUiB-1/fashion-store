@@ -1,14 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 0px;
+  border: 2px none #ffffff;
+}
 .active {
   border: 1.3px solid #fff;
   padding-left: 8px;
   padding-right: 8px;
 }
-html {
+html,
+body {
   scroll-behavior: smooth;
+  color: #333;
+  background-color: #f5f5f5;
 }
 :root {
   --star-size: 20px;
@@ -20,7 +43,7 @@ html {
   -webkit-text-stroke: 3px white;
   -webkit-text-fill-color: transparent;
   animation: fill 0.5s infinite alternate;
-  */font-weight: bold;
+  font-weight: bold;
 }
 @keyframes fill {
   0% {
@@ -94,7 +117,6 @@ a {
   border: 2px solid #333;
   border-right: none;
   border-top: none;
-  
 }
 
 .font {
@@ -149,23 +171,21 @@ a {
     transform: translate(0) !important;
   }
   .slider-wrapper {
-    width:400px;
+    width: 400px;
   }
   .carousel {
     width: fit-content;
   }
-  
 }
-  .thumbs {
-    width: 100%; 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-  .active {
-    background-color: #333;
-    color:white;
-  }
+.thumbs {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: #333;
+  color: white;
+}

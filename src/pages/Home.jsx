@@ -1,23 +1,22 @@
 import React from "react";
 import HeroBanner from "../components/HeroBanner";
 //import CategoryAds from "../components/CategoryAdd";
-import MostPopular from "../components/MostPopular";
 import Explore from "../components/Explore";
 import OurSellers from "../components/OurSellers";
 import Collections from "../components/Collections";
-import Recommended from "../components/Recommended";
-import {AppState} from '../AppState'
+import { AppState } from "../AppState";
+import Jacket from "../components/Jacket";
+import Shoes from "../components/MostPopular";
 
 const Home = () => {
-  
   return (
-    <div>
+    <div className="max-w-screen overflow-x-hidden ">
       <HeroBanner />
-       <OurSellers />
-       <Collections />
-     {/* <MostPopular />
+      <OurSellers />
+      <Collections />
+      <Shoes />
       <Explore />
-      <Recommended /> */}
+      <Jacket />
     </div>
   );
 };

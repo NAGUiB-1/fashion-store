@@ -5,15 +5,17 @@ import Row from "./Row";
 import { fetchData } from "../fetchData";
 
 const LastViewd = ({ q }) => {
-  let {lastViewed} = AppState()
+  let { lastViewed } = AppState();
   const [data, setData] = useState([]);
 
-  console.log(lastViewed)
+  console.log(lastViewed);
   return (
     <>
-    {
-    lastViewed.length >= 1 ? <Row data={lastViewed} title=" Last Viewd " /> : ''
-    }
+      {lastViewed.length >= 2 ? (
+        <Row data={lastViewed.slice(1)} title=" Last Viewd " />
+      ) : (
+        ""
+      )}
     </>
   );
 };
